@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.retro.mybatis.ChatMapper">
+	<insert id="insert" parameterType="chat">
+		insert into retro_chat values(chat_seq.nextval,#{chat_sender},#{chat_receiver},#{chat_content},sysdate,0,#{room_num})
+	</insert>
+
+	<select id="list" parameterType="int" resultType="chat">
+		<![CDATA[ SELECT * FROM retro_chat WHERE room_num = #{room_num} and chat_regdate >= TO_CHAR(SYSDATE-7,'YYYYMMDD') order by chat_num]]>
+	</select>
+	<select id="getRoom" parameterType="string" resultType="room">
+		select * from retro_chatroom where user_id = #{user_id}
+	</select>
+	<update id="read" parameterType="chat">
+		update retro_chat set chat_read = 1 where room_num = #{room_num} and chat_sender != #{chat_sender}
+	</update>
+</mapper>  

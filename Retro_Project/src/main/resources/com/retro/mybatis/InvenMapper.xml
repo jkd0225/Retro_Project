@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.retro.mybatis.InvenMapper">
+	<insert id="insert" parameterType="inven">
+		insert into retro_inven
+		values(inven_seq.nextval,sysdate,#{user_email},#{icon_num})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from retro_inven where
+		inven_num = #{inven_num}
+	</delete>
+	<select id="select" parameterType="int" resultType="inven">
+		select inven.*, icon.* from retro_inven join
+		retro_icon on inven.icon_num = icon.icon_num
+		where icon_num =
+		#{icon_num}
+	</select>
+	<select id="list" resultType="inven">
+		select inven.*, icon.* from retro_inven join
+		retro_icon on inven.icon_num = icon.icon_num
+	</select>
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.retro.mybatis.CommentsMapper">
+	<insert id="insert" parameterType="comment">
+		insert into retro_comments values(comment_seq.nextval,#{comm_content},sysdate,#{board_num})
+	</insert>
+	<select id="list" parameterType="int" resultType="comment">
+		select * from retro_comments where board_num = #{board_num} order by comm_num
+	</select>
+	<select id="getCount" parameterType="int" resultType="int">
+		select NVL(count(comm_num),0) cnt from retro_comments where board_num = #{board_num}
+	</select>
+	<delete id="delete" parameterType="int">
+		delete from retro_comments where comm_num = #{comm_num}
+	</delete>
+</mapper>  

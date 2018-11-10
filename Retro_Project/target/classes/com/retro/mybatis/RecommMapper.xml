@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.retro.mybatis.RecommMapper">
+	<insert id="insert" parameterType="recomm">
+		insert into retro_recommend values(recomm_seq.nextval,#{user_email},#{board_num})
+	</insert>
+	<select id="isRecomm" parameterType="recomm" resultType="recomm">
+		select * from retro_recommend where user_email = #{user_email} and board_num = #{board_num}
+	</select>
+	<select id="getRecommCount" parameterType="int" resultType="int">
+		select NVL(count(num), 0) cnt from retro_recommend where board_num = #{board_num}
+	</select>
+	<delete id="delete" parameterType="recomm">
+		delete from retro_recommend where user_email = #{user_email} and board_num = #{board_num}
+	</delete>
+	<select id="list" resultType="recomm">
+		select * from retro_recommend
+	</select>
+</mapper> 

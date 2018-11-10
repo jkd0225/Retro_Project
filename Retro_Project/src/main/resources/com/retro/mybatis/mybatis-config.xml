@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+		<typeAliases>
+		<typeAlias type="com.retro.kd.vo.BoardVo" alias="board"/>
+		<typeAlias type="com.retro.kd.vo.CommentsVo" alias="comment"/>
+		<typeAlias type="com.retro.kd.vo.RecommVo" alias="recomm"/>
+		<typeAlias type="com.retro.kd.vo.AuthVo" alias="auth"/>
+		<typeAlias type="com.retro.kd.vo.IconVo" alias="icon"/>
+		<typeAlias type="com.retro.kd.vo.UsersVo" alias="users"/>
+		<typeAlias type="com.retro.kd.vo.InvenVo" alias="inven"/>
+		<typeAlias type="com.retro.kd.vo.ChatVo" alias="chat"/>
+		<typeAlias type="com.retro.kd.vo.ChatRoomVo" alias="room"/>
+		<typeAlias type="com.retro.kd.vo.UsersInfoVo" alias="usersInfo"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="com/retro/mybatis/ChatMapper.xml"/>
+		<mapper resource="com/retro/mybatis/BoardMapper.xml"/>
+		<mapper resource="com/retro/mybatis/CommentsMapper.xml"/>
+		<mapper resource="com/retro/mybatis/RecommMapper.xml"/>
+		<mapper resource="com/retro/mybatis/UsersMapper.xml"/>
+		<mapper resource="com/retro/mybatis/InvenMapper.xml"/>
+		<mapper resource="com/retro/mybatis/IconMapper.xml"/>
+	</mappers>
+</configuration>  
