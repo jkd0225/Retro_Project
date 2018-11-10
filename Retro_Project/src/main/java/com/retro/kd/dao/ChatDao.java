@@ -6,8 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.jhta.test1.vo.ChatVo;
-import com.jhta.test1.vo.RoomVo;
+import com.retro.kd.vo.ChatRoomVo;
+import com.retro.kd.vo.ChatVo;
 
 @Repository
 public class ChatDao {
@@ -22,7 +22,7 @@ public class ChatDao {
 		return session.selectList("com.jhta.mybatis.ChatMapper.list",room);
 	}
 	
-	public List<RoomVo> getRoom(String user_id) {
+	public List<ChatRoomVo> getRoom(String user_id) {
 		return session.selectList("com.jhta.mybatis.ChatMapper.getRoom", user_id);
 	}
 	

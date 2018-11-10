@@ -5,19 +5,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jhta.test1.dao.GcommentDao;
-import com.jhta.test1.vo.GcommentVo;
+import com.retro.kd.dao.CommentsDao;
+import com.retro.kd.vo.CommentsVo;
+
 
 @Service
-public class GcommentService {
+public class CommentsService {
 	@Autowired
 	private CommentsDao dao;
 	
-	public int insert(GcommentVo vo) {
+	public int insert(CommentsVo vo) {
 		return dao.insert(vo);
 	}
 	
-	public List<GcommentVo> list(int num){
+	public List<CommentsVo> list(int num){
 		return dao.list(num);
 	}
 	

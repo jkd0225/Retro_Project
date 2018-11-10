@@ -3,21 +3,20 @@ package com.retro.kd.service;
 import java.util.List;
 import java.util.Map;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jhta.test1.dao.MemberDao;
-import com.jhta.test1.vo.AuthVo;
-import com.jhta.test1.vo.MemberInfoVo;
-import com.jhta.test1.vo.MemberVo;
+import com.retro.kd.dao.UsersDao;
+import com.retro.kd.vo.AuthVo;
+import com.retro.kd.vo.UsersInfoVo;
+import com.retro.kd.vo.UsersVo;
 
 @Service
-public class MemberService {
+public class UsersService {
 	@Autowired
 	private UsersDao dao;
 	
-	public int insert(MemberVo vo) {
+	public int insert(UsersVo vo) {
 		return dao.insert(vo);
 	}
 	
@@ -25,12 +24,12 @@ public class MemberService {
 		return dao.addAuth(map);
 	}
 	
-	public List<MemberInfoVo> list(){
+	public List<UsersInfoVo> list(){
 		return dao.list();
 	}
 	
-	public MemberInfoVo getInfo(int id) {
-		return dao.getInfo(id);
+	public UsersInfoVo getInfo(String email) {
+		return dao.getInfo(email);
 	}
 	
 	public List<AuthVo> getAuth(String email) {

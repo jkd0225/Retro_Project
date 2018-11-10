@@ -5,19 +5,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jhta.test1.dao.GrecommDao;
-import com.jhta.test1.vo.GrecommVo;
+import com.retro.kd.dao.RecommDao;
+import com.retro.kd.vo.RecommVo;
 
 @Service
-public class GrecommService {
+public class RecommService {
 	@Autowired
 	private RecommDao dao;
 	
-	public int insert(GrecommVo vo) {
+	public int insert(RecommVo vo) {
 		return dao.insert(vo);
 	}
 	
-	public GrecommVo isRecomm(GrecommVo vo) {
+	public RecommVo isRecomm(RecommVo vo) {
 		return dao.isRecomm(vo);
 	}
 	
@@ -25,11 +25,11 @@ public class GrecommService {
 		return dao.getRecommCount(num);
 	}
 	
-	public int delete(GrecommVo vo) {
+	public int delete(RecommVo vo) {
 		return dao.delete(vo);
 	}
 	
-	public List<GrecommVo> list() {
+	public List<RecommVo> list() {
 		return dao.list();
 	}
 }

@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jhta.test1.dao.ChatDao;
-import com.jhta.test1.vo.ChatVo;
-import com.jhta.test1.vo.RoomVo;
+import com.retro.kd.dao.ChatDao;
+import com.retro.kd.vo.ChatRoomVo;
+import com.retro.kd.vo.ChatVo;
 
 @Service
 public class ChatService {
@@ -22,7 +22,7 @@ public class ChatService {
 		return dao.list(room);
 	}
 	
-	public List<RoomVo> getRoom(String user_id) {
+	public List<ChatRoomVo> getRoom(String user_id) {
 		return dao.getRoom(user_id);
 	}
 	

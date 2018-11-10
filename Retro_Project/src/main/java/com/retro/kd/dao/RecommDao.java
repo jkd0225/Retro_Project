@@ -6,18 +6,18 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.jhta.test1.vo.GrecommVo;
+import com.retro.kd.vo.RecommVo;
 
 @Repository
 public class RecommDao {
 	@Autowired
 	private SqlSession session;
 	
-	public int insert(GrecommVo vo) {
+	public int insert(RecommVo vo) {
 		return session.insert("com.jhta.mybatis.GrecommMapper.insert", vo);
 	}
 	
-	public GrecommVo isRecomm(GrecommVo vo) {
+	public RecommVo isRecomm(RecommVo vo) {
 		return session.selectOne("com.jhta.mybatis.GrecommMapper.isRecomm", vo);
 	}
 	
@@ -25,11 +25,11 @@ public class RecommDao {
 		return session.selectOne("com.jhta.mybatis.GrecommMapper.getRecommCount", num);
 	}
 	
-	public int delete(GrecommVo vo) {
+	public int delete(RecommVo vo) {
 		return session.delete("com.jhta.mybatis.GrecommMapper.delete", vo);
 	}
 	
-	public List<GrecommVo> list() {
+	public List<RecommVo> list() {
 		return session.selectList("com.jhta.mybatis.GrecommMapper.list");
 	}
 	
