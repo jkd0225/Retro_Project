@@ -14,19 +14,21 @@ public class ChatDao {
 	@Autowired
 	private SqlSession session;
 	
-	public int insert(ChatVo vo) {
-		return session.insert("com.jhta.mybatis.ChatMapper.insert",vo);
+	private final static String NAMESPACE = "com.retro.kd.mybatis.ChatMapper.";
+	
+	public int insert(ChatVo chatVo) {
+		return session.insert(NAMESPACE + "insert",chatVo);
 	}
 	
-	public List<ChatVo> list(int room){
-		return session.selectList("com.jhta.mybatis.ChatMapper.list",room);
+	public List<ChatVo> list(int room_num){
+		return session.selectList(NAMESPACE + "list",room_num);
 	}
 	
 	public List<ChatRoomVo> getRoom(String user_id) {
-		return session.selectList("com.jhta.mybatis.ChatMapper.getRoom", user_id);
+		return session.selectList(NAMESPACE + "getRoom", user_id);
 	}
 	
-	public int update(ChatVo vo) {
-		return session.update("com.jhta.mybatis.ChatMapper.read", vo);
+	public int update(ChatVo chatVo) {
+		return session.update(NAMESPACE + "read", chatVo);
 	}
 }

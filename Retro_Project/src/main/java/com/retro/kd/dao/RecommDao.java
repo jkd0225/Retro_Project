@@ -13,24 +13,26 @@ public class RecommDao {
 	@Autowired
 	private SqlSession session;
 	
-	public int insert(RecommVo vo) {
-		return session.insert("com.jhta.mybatis.GrecommMapper.insert", vo);
+	private final static String NAMESPACE = "com.retro.kd.mybatis.RecommMapper.";
+	
+	public int insert(RecommVo recommVo) {
+		return session.insert(NAMESPACE + "insert", recommVo);
 	}
 	
-	public RecommVo isRecomm(RecommVo vo) {
-		return session.selectOne("com.jhta.mybatis.GrecommMapper.isRecomm", vo);
+	public RecommVo isRecomm(RecommVo recommVo) {
+		return session.selectOne(NAMESPACE + "isRecomm", recommVo);
 	}
 	
-	public int getRecommCount(int num) {
-		return session.selectOne("com.jhta.mybatis.GrecommMapper.getRecommCount", num);
+	public int getRecommCount(int board_num) {
+		return session.selectOne(NAMESPACE + "getRecommCount", board_num);
 	}
 	
-	public int delete(RecommVo vo) {
-		return session.delete("com.jhta.mybatis.GrecommMapper.delete", vo);
+	public int delete(RecommVo recommVo) {
+		return session.delete(NAMESPACE + "delete", recommVo);
 	}
 	
 	public List<RecommVo> list() {
-		return session.selectList("com.jhta.mybatis.GrecommMapper.list");
+		return session.selectList(NAMESPACE + "list");
 	}
 	
 }

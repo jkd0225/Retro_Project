@@ -13,19 +13,21 @@ public class CommentsDao {
 	@Autowired
 	private SqlSession session;
 	
-	public int insert(CommentsVo vo) {
-		return session.insert("com.jhta.mybatis.GcommentMapper.insert", vo);
+	private final static String NAMESPACE = "com.retro.kd.mybatis.CommentsMapper.";
+	
+	public int insert(CommentsVo commentsVo) {
+		return session.insert(NAMESPACE + "insert", commentsVo);
 	}
 	
-	public List<CommentsVo> list(int num){
-		return session.selectList("com.jhta.mybatis.GcommentMapper.list", num);
+	public List<CommentsVo> list(int comm_num){
+		return session.selectList(NAMESPACE + "list", comm_num);
 	}
 	
-	public int getCount(int num) {
-		return session.selectOne("com.jhta.mybatis.GcommentMapper.getCount", num);
+	public int getCount(int board_num) {
+		return session.selectOne(NAMESPACE + "getCount", board_num);
 	}
 	
-	public int delete(int cnum) {
-		return session.delete("com.jhta.mybatis.GcommentMapper.delete", cnum);
+	public int delete(int comm_num) {
+		return session.delete(NAMESPACE + "delete", comm_num);
 	}
 }

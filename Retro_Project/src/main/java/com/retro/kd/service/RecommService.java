@@ -11,25 +11,25 @@ import com.retro.kd.vo.RecommVo;
 @Service
 public class RecommService {
 	@Autowired
-	private RecommDao dao;
+	private RecommDao recommDao;
 	
-	public int insert(RecommVo vo) {
-		return dao.insert(vo);
+	public int insert(RecommVo recommVo) {
+		return recommDao.insert(recommVo);
 	}
 	
-	public RecommVo isRecomm(RecommVo vo) {
-		return dao.isRecomm(vo);
+	public RecommVo isRecomm(RecommVo recommVo) {
+		return recommDao.isRecomm(recommVo);
 	}
 	
-	public int getRecommCount(int num) {
-		return dao.getRecommCount(num);
+	public int getRecommCount(int board_num) {
+		return recommDao.getRecommCount(board_num);
 	}
 	
-	public int delete(RecommVo vo) {
-		return dao.delete(vo);
+	public int delete(RecommVo recommVo) {
+		return recommDao.delete(recommVo);
 	}
 	
 	public List<RecommVo> list() {
-		return dao.list();
+		return recommDao.list();
 	}
 }

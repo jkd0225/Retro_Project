@@ -14,8 +14,8 @@
 	<select id="select" parameterType="int" resultType="inven">
 		select inven.*, icon.* from retro_inven join
 		retro_icon on inven.icon_num = icon.icon_num
-		where icon_num =
-		#{icon_num}
+		where iven_num =
+		#{iven_num}
 	</select>
 	<select id="list" resultType="inven">
 		select inven.*, icon.* from retro_inven join

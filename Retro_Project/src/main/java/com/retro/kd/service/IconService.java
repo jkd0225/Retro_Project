@@ -12,13 +12,13 @@ import com.retro.kd.vo.IconVo;
 @Service
 public class IconService {
 	@Autowired
-	private IconDao dao;
+	private IconDao iconDao;
 	
 	public List<IconVo> list(Map<String, Object> map){
-		return dao.list(map);
+		return iconDao.list(map);
 	}
 	
 	public int getCount(Map<String, Object> map) {
-		return dao.getCount(map);
+		return iconDao.getCount(map);
 	}
 }

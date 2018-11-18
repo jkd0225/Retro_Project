@@ -14,11 +14,13 @@ public class IconDao {
 	@Autowired
 	private SqlSession session;
 	
+	private final static String NAMESPACE = "com.retro.kd.mybatis.IconMapper.";
+	
 	public List<IconVo> list(Map<String, Object> map){
-		return session.selectList("com.jhta.mybatis.StoreMapper.list", map);
+		return session.selectList(NAMESPACE + "list", map);
 	}
 	
 	public int getCount(Map<String, Object> map) {
-		return session.selectOne("com.jhta.mybatis.StoreMapper.getCount", map);
+		return session.selectOne(NAMESPACE + "getCount", map);
 	}
 }

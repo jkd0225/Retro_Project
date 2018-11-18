@@ -12,21 +12,21 @@ import com.retro.kd.vo.ChatVo;
 @Service
 public class ChatService {
 	@Autowired
-	private ChatDao dao;
+	private ChatDao chatDao;
 	
-	public int insert(ChatVo vo) {
-		return dao.insert(vo);
+	public int insert(ChatVo chatVo) {
+		return chatDao.insert(chatVo);
 	}
 	
-	public List<ChatVo> list(int room){
-		return dao.list(room);
+	public List<ChatVo> list(int room_num){
+		return chatDao.list(room_num);
 	}
 	
 	public List<ChatRoomVo> getRoom(String user_id) {
-		return dao.getRoom(user_id);
+		return chatDao.getRoom(user_id);
 	}
 	
-	public int update(ChatVo vo) {
-		return dao.update(vo);
+	public int update(ChatVo chatVo) {
+		return chatDao.update(chatVo);
 	}
 }

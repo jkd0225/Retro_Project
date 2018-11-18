@@ -14,34 +14,34 @@ import com.retro.kd.vo.UsersVo;
 @Service
 public class UsersService {
 	@Autowired
-	private UsersDao dao;
+	private UsersDao usersDao;
 	
-	public int insert(UsersVo vo) {
-		return dao.insert(vo);
+	public int insert(UsersVo usersVo) {
+		return usersDao.insert(usersVo);
 	}
 	
 	public int addAuth(Map<String, Object> map) {
-		return dao.addAuth(map);
+		return usersDao.addAuth(map);
 	}
 	
 	public List<UsersInfoVo> list(){
-		return dao.list();
+		return usersDao.list();
 	}
 	
-	public UsersInfoVo getInfo(String email) {
-		return dao.getInfo(email);
+	public UsersInfoVo getInfo(String user_email) {
+		return usersDao.getInfo(user_email);
 	}
 	
-	public List<AuthVo> getAuth(String email) {
-		return dao.getAuth(email);
+	public List<AuthVo> getAuth(String user_email) {
+		return usersDao.getAuth(user_email);
 	}
 	
-	public int insertAuth(AuthVo vo) {
-		return dao.insertAuth(vo);
+	public int insertAuth(AuthVo authVo) {
+		return usersDao.insertAuth(authVo);
 	}
 	
-	public int deleteAuth(AuthVo vo) {
-		return dao.deleteAuth(vo);
+	public int deleteAuth(AuthVo authVo) {
+		return usersDao.deleteAuth(authVo);
 	}
 }
 
